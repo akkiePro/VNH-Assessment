@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+
 @RestController
 @RequestMapping("customer")
 public class CustomerController {
@@ -16,7 +18,7 @@ public class CustomerController {
     private CustomerService service;
 
     @PostMapping("newCustomer")
-    public void newCustomer(@RequestBody Customer customer) {
+    public void newCustomer(@RequestBody Customer customer) throws ParseException {
         service.addCustomer(customer);
     }
 
